@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors and Specificity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/styles.css">
+</head>
+<body>
+    <main>
+        <article>
+        <h1>CSS Selectors</h1>
+        <p>A CSS selector is a way for you to select HTML elements, and style them.</p>
+        </article>
+        <article>
+            <h2>CSS Selectors</h2>
+            <p>CSS selectors are used to "find" (or select) HTML elements you want to style.</p>
+            <p>We can divide CSS selectors into five categories:</p>
+            <ul>
+                <li>Simple selectors (select elements based on name, id, class)</li>
+                <li>Combinator selectors (select elements based on a specific relationship between them)</li>
+                <li>Pseudo-class selectors (select elements based on a certain state)</li>
+                <li>Pseudo-elements selectors (select and style a part of an element)</li>
+                <li>Attribute selectors (select elements based on an attribute or attribute value)</li>
+            </ul>
+        </article>
+        <hr>
+        <article>
+            <h2>The CSS element Selector</h2>
+            <p>The element selector selects HTML elements based on the element name</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>Here, all <span class="code">&lt;p&gt;</span> elements on the page will be center-aligned, with a red text color:</p>
+                <div id="css-selector-1">
+                    <pre>
+                        <code class="codeblock">
+                            p {
+                                text-align: center;
+                                color: red;
+                              }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </article>
+        <hr>
+        <article>
+            <h2>The CSS <span class="ID">id</span> Selector</h2>
+            <p>The <span class="ID">id</span> selector uses the <span class="ID">id</span> attribute of an HTML element to select a specific element.</p>
+            <p>The <span class="ID">id</span> of an element is unique within a page, so the <span class="ID">id</span> selector is used to select one unique element.</p>
+            <p>To select an element with a specific <span class="ID">id</span>, write a hash (#) character, followed by the <span class="ID">id</span> of the element.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>The CSS rule below will be applied to the HTML element with <span class="code">id="para1"</span>:</p>
+                <div id="css-selector-2">
+                    <pre>
+                        <code class="codeblock">
+                            #para1 {
+                                text-align: center;
+                                color: red;
+                              }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="warning-message">
+                <p><span>Note:</span> An id name cannot start with a number!</p>
+            </div>
+        </article>
+        <hr>
+        <article>
+            <h2>The CSS class Selector</h2>
+            <p>The class selector selects HTML elements with a specific class attribute.</p>
+            <p>To select elements with a specific class, write a period (.) character, followed by the class name.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example all HTML elements with <span class="code">class="center"</span> will be red and center-aligned:</p>
+                <div id="css-selector-3">
+                    <pre>
+                        <code class="codeblock">
+                            .center {
+                                text-align: center;
+                                color: red;
+                              }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <p>You can also specify that only specific HTML elements should be affected by a class.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example only &lt;p&gt; elements with <span class="code">class="center"</span> will be red and center-aligned:</p>
+                <div id="css-selector-4">
+                    <pre>
+                        <code class="codeblock">
+                            p.center {
+                                text-align: center;
+                                color: red;
+                              }      
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <p>HTML elements can also refer to more than one class.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example only <span class="code">&lt;p&gt;</span> element will be styled according to <span class="code">class="center"</span> and to <span class="code">class="large"</span>:</p>
+                <div id="css-selector-5">
+                    <pre>
+                        <code class="codeblock">
+                            &lt;p class="center large"&gt;This paragraph refers to two classes.&lt;p/&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="warning-message">
+                <p><span>Note:</span>A class name cannot start with a number!</p>
+            </div>
+        </article>
+        <hr>
+        <article>
+            <h2>The CSS Universal Selector</h2>
+            <p>The universal selector (*) selects all HTML elements on the page.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>The CSS rule below will affect every HTML element on the page:</p>
+                <div id="css-selector-6">
+                    <pre>
+                        <code class="codeblock">
+                            * {
+                                text-align: center;
+                                color: blue;
+                              }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </article>
+        <hr>
+        <article>
+            <h2>The CSS Grouping Selector</h2>
+            <p>The grouping selector selects all the HTML elements with the same style definitions.</p>
+            <p>Look at the following CSS code (the h1, h2, and p elements have the same style definitions):</p>
+            <div id="css-code-snippet1">
+                <pre>
+                    <code class="codeblock">
+                        h1 {
+                            text-align: center;
+                            color: red;
+                          }
+                          
+                          h2 {
+                            text-align: center;
+                            color: red;
+                          }
+                          
+                          p {
+                            text-align: center;
+                            color: red;
+                          }
+                    </code>
+                </pre>
+            </div>
+            <p>It will be better to group the selectors, to minimize the code.</p>
+            <p>To group selectors, separate each selector with a comma.</p>
+            <div class="example">
+                <h3>Example</h3>
+                <p>In this example we have grouped the selectors from the code above:</p>
+                <pre>
+                    <code class="codeblock">
+                        h1, h2, p {
+                            text-align: center;
+                            color: red;
+                          }
+                    </code>
+                </pre>  
+            </div>
+        </article>
+        <hr>
+        <article>
+            <h2>CSS Specifity</h2>
+            <p><span class="specificity">Specificity</span> is the algorithm browsers use to determine the CSS declaration that is the most relevante to an which in turn, determines the property value to apply to the element. 
+                The specificity algorithm calculates the weight of a CSS selector to determine which rule from competing CSS declarations gets applied to an element.
+            </p>
+            <h2>How is specifity calculated?</h2>
+            <p>
+                Specificity is an algorithm that calculates the weight that is applied to a given CSS declaration. 
+                The weight is determined by the number of selectors of each weight category in the selector matching the element
+                (or pseudo-element). If there are two or more declarations providing different property values for the same element,
+                the declaration value in the style block having the matching selector with the greatest algorithmic weight gets applied.
+            </p>
+            <p>
+                The specificity algorithm is basically a three-column value of three categories or weights: <span>id, class, and type</span> - 
+                corresponding to the three types of selectors. The value represents the count of selector components in each weight category
+                and is written as <span>ID - CLASS - TYPE</span>. The three columns are created by counting the number of selector components
+                for each selector weight category in the selectors that match the element. 
+            </p>
+            <h3>Selector weight categories</h3>
+            <p>The selector weight categories are listed below in the order of specificity:</p>
+            <table>
+                <thead>
+                    <th>Selector name</th>
+                    <th>Description</th>
+                    <th>Selector weight</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="code">ID</span></td>
+                        <td>Includes only ID selectors, such as <span class="code">#example</span></td>
+                        <td>It's weight value is 1-0-0</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">Class</span></td>
+                        <td>Includes class selectors, such as <span>.myClass</span>, and pseudo-classes, such as <span class="code">:hover</span></td>
+                        <td>It's weight value is 0-1-0</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">Type</span></td>
+                        <td>Includes type selectors, such as <span class="code">p</span>, <span class="code">h1</span>, and <span class="code">td</span>, and pseudo-elements</td>
+                        <td>It's weight value is 0-0-1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+</body>
+</html>
