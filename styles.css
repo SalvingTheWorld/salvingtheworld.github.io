@@ -1,0 +1,75 @@
+/*Setting up the box-sizing properyt*/
+*{
+    box-sizing: border-box;
+}
+
+/*Styling the body, font, and H1 element */
+
+body{
+    background-color: #73877B;
+    font-family: "Noto Sans", sans-serif;
+    color: #042A2B
+}
+
+
+/*Styling the HTML tags, CSS selectors, and code blocks*/
+.code{
+    font-family: monospace;
+    font-weight: 1000;
+    background-color: #E1F4CB;
+}
+
+.codeblock{
+    display:block;
+    text-align: left;
+    color: #E9C46A;
+    background-color: #242325;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.example{
+    background-color: #F1BF98;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+/*Styling content*/
+
+P{
+    font-size: medium;
+    line-height: 1.5;
+}
+
+.ID{
+    text-transform: uppercase;
+}
+
+.specificity{
+    font-weight: 700;
+    color: #E9C46A;
+}
+
+/*Styling specificity table*/
+
+table{
+    border: 1px solid;
+    margin: 0, auto;
+}
+
+thead{
+    background-color: #E9C46A;
+}
+
+td{
+    border-top: 1px solid;
+}
+
+tbody{
+    background-color: #E1F4CB;
+}
